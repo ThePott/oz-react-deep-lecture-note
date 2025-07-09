@@ -28,59 +28,59 @@ $fgAccent: hsl(0 0 90);
 
 
 
-.bgMuted {
-  background-color: $bgMuted;
-}
+// .bgMuted {
+//   background-color: $bgMuted;
+// }
 
-.bg0 {
-  background-color: $bg0;
-}
+// .bg0 {
+//   background-color: $bg0;
+// }
 
-.bgAccent {
-  background-color: $bgAccent;
-}
+// .bgAccent {
+//   background-color: $bgAccent;
+// }
 
-.fgMuted {
-  color: $fgMuted;
-}
+// .fgMuted {
+//   color: $fgMuted;
+// }
 
-.fg0 {
-  color: $fg0;
-}
+// .fg0 {
+//   color: $fg0;
+// }
 
-.fgAccent {
-  color: $fgAccent;
-}
+// .fgAccent {
+//   color: $fgAccent;
+// }
 
-div {
-  &>h1 {
-    font-size: 48px;
-  }
-  &>p {
-    font-size: 16px;
-  }
-}
+// div {
+//   &>h1 {
+//     font-size: 48px;
+//   }
+//   &>p {
+//     font-size: 16px;
+//   }
+// }
 
-@mixin flex ($dir: row, $justify: center, $items:center) {
-  display: flex;
-  flex-direction: $dir;
-  justify-content: $justify;
-  align-items: $items;;
-}
+// @mixin flex ($dir: row, $justify: center, $items:center) {
+//   display: flex;
+//   flex-direction: $dir;
+//   justify-content: $justify;
+//   align-items: $items;
+// }
 
-div.test {
-  font-size: 100px;
-  font-weight: 900;
+// div.test {
+//   font-size: 100px;
+//   font-weight: 900;
   
-  div {
-    &:nth-child(1) {
-      @include flex()
-    }
-    &:nth-child(2) {
-      @include flex($justify: space-between)
-    }
-    &:nth-child(3) {
-      @include flex($dir: column)
-    }
-  }
-}
+//   div {
+//     &:nth-child(1) {
+//       @include flex()
+//     }
+//     &:nth-child(2) {
+//       @include flex($justify: space-between)
+//     }
+//     &:nth-child(3) {
+//       @include flex($dir: column)
+//     }
+//   }
+// }
