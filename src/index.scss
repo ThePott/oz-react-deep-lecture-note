@@ -1,5 +1,7 @@
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 $bgMuted: hsl(0 0 20);
@@ -24,10 +26,7 @@ $fgAccent: hsl(0 0 90);
   -moz-osx-font-smoothing: grayscale;
 }
 
-div.test {
-  font-size: 100px;
-  font-weight: 900;
-}
+
 
 .bgMuted {
   background-color: $bgMuted;
@@ -51,4 +50,37 @@ div.test {
 
 .fgAccent {
   color: $fgAccent;
+}
+
+div {
+  &>h1 {
+    font-size: 48px;
+  }
+  &>p {
+    font-size: 16px;
+  }
+}
+
+@mixin flex ($dir: row, $justify: center, $items:center) {
+  display: flex;
+  flex-direction: $dir;
+  justify-content: $justify;
+  align-items: $items;;
+}
+
+div.test {
+  font-size: 100px;
+  font-weight: 900;
+  
+  div {
+    &:nth-child(1) {
+      @include flex()
+    }
+    &:nth-child(2) {
+      @include flex($justify: space-between)
+    }
+    &:nth-child(3) {
+      @include flex($dir: column)
+    }
+  }
 }
