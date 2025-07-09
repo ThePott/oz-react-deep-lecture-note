@@ -11,8 +11,8 @@ Chapter 5. Next.js
 
 🚀 Getting Started
 ```bash
-git clone ----
-cd ----
+git clone https://github.com/ThePott/oz-react-deep-lecture-note
+cd oz-react-deep-lecture-note
 npm install
 ```
 
