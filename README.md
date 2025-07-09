@@ -1,12 +1,27 @@
-# React + Vite
+# Oz Bootcamp - React Advanced Lecture
+A step-by-step React learning journey with each commit representing a chapter of the bootcamp. 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 📚 Course Structure 
+Each commit in this repository corresponds to a specific chapter/lesson:
+Chapter 1. React 스타일링
+Chapter 2. React 상태관리 심화
+Chapter 3. React 최적화
+Chapter 4. 미니 프로젝트 2 - 포켓몬 도감 만들기
+Chapter 5. Next.js
 
-Currently, two official plugins are available:
+🚀 Getting Started
+```bash
+git clone ----
+cd ----
+npm install
+```
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+📖 How to Follow Along
+Browse commits to see progression through each chapter Check out specific commits to see code at different learning stages Each commit message includes the chapter name and key concepts covered
 
-## Expanding the ESLint configuration
+🛠️ Prerequisites
+Node.js installed 
+Initial setup is based on "Build a React app from Scratch" with Vite https://react.dev/learn/build-a-react-app-from-scratch
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+📝 Notes
+This is a learning repository. Code evolves with each chapter as new React concepts are introduced and implemented.
