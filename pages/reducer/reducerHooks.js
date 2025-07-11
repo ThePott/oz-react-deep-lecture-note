@@ -1,9 +1,9 @@
-import { createContext, useContext, useReducer } from "react"
+import { useContext, useReducer } from "react"
+import { CountContext } from "./context"
 
-const CountContext = createContext()
 const useCountContext = () => {
     const context = useContext(CountContext)
-    if (!context) { throw new Error("---- Missing context")}   
+    if (!context) { throw new Error("---- Missing context") }
     return context
 }
 
@@ -21,7 +21,7 @@ const countReducer = (state, action) => {
 const useCountReducer = () => {
     const [count, countDispatch] = useReducer(countReducer, 0)
 
-    return { count, countDispatch}
+    return { count, countDispatch }
 }
 
-export {useCountReducer, CountContext, useCountContext}
+export { useCountReducer, CountContext, useCountContext }

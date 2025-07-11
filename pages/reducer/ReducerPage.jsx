@@ -1,4 +1,5 @@
-import { CountContext, useCountContext, useCountReducer } from './hooks'
+import { CountContextProvider } from './context'
+import { useCountContext } from './reducerHooks'
 
 const UpButton = () => {
   const { countDispatch } = useCountContext()
@@ -28,16 +29,21 @@ const SomeRandomBox = () => {
   )
 }
 
-const ReducerPage = () => {
-  const { count, countDispatch } = useCountReducer()
-  console.log("----- page re-rendered")
+const Display = () => {
+  const { count } = useCountContext()
   return (
-    <CountContext.Provider value={{ countDispatch }}>
-      <div>this is count: {count}</div>
+    <div>{count}</div>
+  )
+}
+
+const ReducerPage = () => {
+  return (
+    <CountContextProvider>
+      <Display />
       <UpButton />
       <DownButton />
       <SomeRandomBox />
-    </CountContext.Provider>
+    </CountContextProvider>
   )
 }
 

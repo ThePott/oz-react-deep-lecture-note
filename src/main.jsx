@@ -1,8 +1,10 @@
 import { createRoot } from 'react-dom/client'
-import App from './App.jsx'
 import './index.css'
 import { createBrowserRouter, RouterProvider, } from "react-router";
-import ReducerPage from "../pages/reducer/page.jsx"
+
+import App from './App.jsx'
+import ReducerPage from "../pages/reducer/ReducerPage.jsx"
+import ContextAsLecturePage from "../pages/context-as-lecture/page.jsx"
 
 let router = createBrowserRouter([
     {
@@ -12,6 +14,10 @@ let router = createBrowserRouter([
     {
         path: "/reducer",
         element: <ReducerPage />
+    },
+    {
+        path: "/context-as-lecture",
+        element: <ContextAsLecturePage />
     }
 ]);
 
