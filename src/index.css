@@ -6,15 +6,6 @@
   padding: 0;
 }
 
-/* $bgMuted: hsl(0 0 20);
-$bg0: hsl(0 0 10);
-$bgAccent: hsl(0 0 10);
-
-$fgMuted: hsl(0 0 70);
-$fg0: hsl(0 0 80);
-$fgAccent: hsl(0 0 90); */
-
-
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
