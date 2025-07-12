@@ -1,5 +1,6 @@
 import { Provider, useDispatch, useSelector } from "react-redux"
-import { combineReducers, legacy_createStore } from "redux"
+import { applyMiddleware, combineReducers, legacy_createStore } from "redux"
+import { thunk } from "redux-thunk"
 
 const countReducer = (state = 0, action) => {
   switch (action.type) {
@@ -22,13 +23,13 @@ const bigCountReducer = (state = 100, action) => {
   }
 }
 
-const rootReducer = combineReducers({countReducer, bigCountReducer})
+const rootReducer = combineReducers({ countReducer, bigCountReducer })
 
-const store = legacy_createStore(rootReducer)
+const store = legacy_createStore(rootReducer, applyMiddleware(thunk))
 
 const InsideContent = () => {
   const count = useSelector(state => state.countReducer) // 아마 zustand의 useFruitStore((state) => state.increase) 이런 거 같기는 한데....
-  const bigCount = useSelector(state => state.bigCountReducer) 
+  const bigCount = useSelector(state => state.bigCountReducer)
   const dispatch = useDispatch()
 
   return (
@@ -39,6 +40,12 @@ const InsideContent = () => {
       <div>big count: {bigCount}</div>
       <button onClick={() => dispatch({ type: "bigIncrement" })}>+</button>
       <button onClick={() => dispatch({ type: "bigDecrement" })}>-</button>
+      <button onClick={() => dispatch((dispatch) => {
+        setTimeout(
+          () => dispatch({ type: "increment" }),
+          1000
+        )
+      })}>async function</button>
     </div>
   )
 }
