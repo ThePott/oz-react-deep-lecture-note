@@ -4,7 +4,7 @@ import { createBrowserRouter, RouterProvider, } from "react-router";
 
 import App from './App.jsx'
 import ReducerPage from "../pages/reducer/ReducerPage.jsx"
-import ContextAsLecturePage from "../pages/context-as-lecture/page.jsx"
+import ReduxLegacyPage from "../pages/redux-legacy/ReduxLegacyPage.jsx"
 
 let router = createBrowserRouter([
     {
@@ -16,8 +16,8 @@ let router = createBrowserRouter([
         element: <ReducerPage />
     },
     {
-        path: "/context-as-lecture",
-        element: <ContextAsLecturePage />
+        path: "/redux-legacy",
+        element: <ReduxLegacyPage />
     }
 ]);
 
