@@ -6,6 +6,7 @@ import App from './App.jsx'
 import ReducerPage from "../pages/reducer/ReducerPage.jsx"
 import ReduxLegacyPage from "../pages/redux-legacy/ReduxLegacyPage.jsx"
 import ReduxToolkitPage from "../pages/redux-toolkit/ReduxToolkitPage.jsx"
+import MemoizePage from '../pages/memoize/MemoizePage.jsx';
 
 let router = createBrowserRouter([
     {
@@ -24,6 +25,10 @@ let router = createBrowserRouter([
         path: "/redux-toolkit",
         element: <ReduxToolkitPage />
     },
+    {
+        path: "/memoize",
+        element: <MemoizePage />
+    }
 ]);
 
 createRoot(document.getElementById('root')).render(
