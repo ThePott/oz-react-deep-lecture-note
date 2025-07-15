@@ -1,6 +1,6 @@
 import { Provider, useDispatch, useSelector } from "react-redux"
 
-import { configureStore, createSlice } from "@reduxjs/toolkit"
+import { configureStore, createAsyncThunk, createSlice } from "@reduxjs/toolkit"
 
 const counterSlice = createSlice({
     name: "count", // 얘는 역할이 뭐냐 // namespace prefix
@@ -22,6 +22,20 @@ const couterBigSlice = createSlice({
     }
 })
 
+const slowIncreamentThunk = createAsyncThunk(
+    // id를 직접 부여
+    "count/slowIncreament",
+
+    (value, { dispatch }) => {
+        console.log("---- slow clicked")
+        setTimeout(
+            () => {dispatch(counterSlice.actions.increament())},
+            1000
+        )
+    }
+)
+
+
 const store = configureStore({
     reducer: {
         counterState: counterSlice.reducer,
@@ -32,7 +46,7 @@ const store = configureStore({
 const InsideContent = () => {
     const count = useSelector(state => state.counterState)
     const countBig = useSelector(state => state.counterBigState)
-    
+
     const dispatch = useDispatch()
     return (
         <div>
@@ -40,6 +54,7 @@ const InsideContent = () => {
             <div>count: {count}</div>
             <button onClick={() => dispatch(counterSlice.actions.increament())}>plus</button>
             <button onClick={() => dispatch(counterSlice.actions.decreament())}>minus</button>
+            <button onClick={() => dispatch(slowIncreamentThunk())}>slow</button>
             <div>BIG COUNT: {countBig}</div>
             <button onClick={() => dispatch(couterBigSlice.actions.increament())}>plus</button>
             <button onClick={() => dispatch(couterBigSlice.actions.decreament())}>minus</button>
