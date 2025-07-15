@@ -5,6 +5,7 @@ import { createBrowserRouter, RouterProvider, } from "react-router";
 import App from './App.jsx'
 import ReducerPage from "../pages/reducer/ReducerPage.jsx"
 import ReduxLegacyPage from "../pages/redux-legacy/ReduxLegacyPage.jsx"
+import ReduxToolkitPage from "../pages/redux-toolkit/ReduxToolkitPage.jsx"
 
 let router = createBrowserRouter([
     {
@@ -18,7 +19,11 @@ let router = createBrowserRouter([
     {
         path: "/redux-legacy",
         element: <ReduxLegacyPage />
-    }
+    },
+    {
+        path: "/redux-toolkit",
+        element: <ReduxToolkitPage />
+    },
 ]);
 
 createRoot(document.getElementById('root')).render(
